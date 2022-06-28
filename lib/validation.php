@@ -11,7 +11,7 @@ class Validation
     $result = "true";
     while ($i < count($input)) {
       // echo count($input);die;
-      $input[$i] = trim($input[$i], " ");          // note this function...... the default value for the 2nd argument is space, so we can remove the 2nd argument
+      $input[$i] = trim($input[$i], " ");
       $input[$i] = (strlen($input[$i]) == 0) ? true : false;
       if ($input[$i] == true) {
         return true;
@@ -22,7 +22,7 @@ class Validation
     return $result;
 
 
-    // $input[$i] = trim($input[$i], " ");          // note this function...... the default value for the 2nd argument is space, so we can remove the 2nd argument
+    // $input[$i] = trim($input[$i], " ");          
     // $input = (strlen($input) == 0) ? true : false;
     // return $input;
   }

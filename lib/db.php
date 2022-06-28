@@ -1,6 +1,6 @@
 <?php
 
-// we make a database rubber to deal with any table 
+
 
 
 
@@ -35,14 +35,14 @@ class db
   }
   public function andWhere($column, $compair, $value)
   {
-    $this->sql .= " AND `$column` $compair '$value'";     // note here (.=) make concatenation 
-    // echo $this->sql;die;    // we use this line for debugging
+    $this->sql .= " AND `$column` $compair '$value'";
+    // echo $this->sql;die;    
     return $this;
   }
   public function orWhere($column, $compair, $value)
   {
-    $this->sql .= " OR `$column` $compair '$value'";     // note here (.=) make concatenation 
-    // echo $this->sql;die;    // we use this line for debugging
+    $this->sql .= " OR `$column` $compair '$value'";
+    // echo $this->sql;die;    
     return $this;
   }
 
@@ -56,7 +56,7 @@ class db
   public function getAll()
   {
     $this->query();
-    // echo $this->sql;die;    // we use this line for debugging
+    // echo $this->sql;die;    
     while ($row = mysqli_fetch_assoc($this->query)) {
       $data[] = $row;
     }
@@ -65,7 +65,7 @@ class db
 
   public function getRow()
   {
-    // echo $this->sql;die;    // we use this line for debugging
+    // echo $this->sql;die;    
     $this->query();
     $row = mysqli_fetch_assoc($this->query);
     return $row;
@@ -92,7 +92,7 @@ class db
     $row = $this->prepareData($data);
 
     $this->sql = "INSERT INTO `$table` SET $row";
-    // echo $this->sql;die;    // this line for debugging
+    // echo $this->sql;die;    
 
     return $this;
   }
@@ -190,7 +190,7 @@ class db
   {
     // echo $this->sql;die;
     $this->query = mysqli_query($this->connection, $this->sql);
-    // $connection->query("$this->sql");    note this syntax... but this will not work here
+    // $connection->query("$this->sql");    
   }
 
   public function showError()
